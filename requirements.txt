@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+python-multipart
+opencv-python
+pytesseract
+pillow
+numpy
+pandas
+openpyxl
+requests
+beautifulsoup4
+playwright
+scikit-image
+sentence-transformers
+ultralytics

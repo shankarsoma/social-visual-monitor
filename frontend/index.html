@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Social Visual Brand Monitoring
+</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background:#020617;
+color:white;
+font-family:Arial,sans-serif;
+}
+
+.glass{
+background:linear-gradient(135deg,#0f172a,#111827);
+border:1px solid rgba(59,130,246,0.2);
+backdrop-filter:blur(12px);
+}
+
+</style>
+
+</head>
+
+<body class="p-8">
+
+<div class="max-w-7xl mx-auto">
+
+<h1 class="text-5xl font-black text-cyan-400 mb-2">
+AI Visual Brand Monitoring
+</h1>
+
+<p class="text-slate-400 mb-10">
+Enterprise ORM Intelligence Dashboard
+</p>
+
+<div class="grid md:grid-cols-3 gap-6 mb-8">
+
+<div class="glass rounded-3xl p-6">
+
+<h2 class="text-2xl font-bold mb-4">
+Reference Logo
+</h2>
+
+<input
+type="file"
+id="logoUpload"
+class="w-full bg-black border border-slate-700 rounded-2xl p-4"
+/>
+
+</div>
+
+<div class="glass rounded-3xl p-6">
+
+<h2 class="text-2xl font-bold mb-4">
+Brand Keywords
+</h2>
+
+<textarea
+id="keywords"
+rows="8"
+class="w-full bg-black border border-slate-700 rounded-2xl p-4"
+>
+telegram
+vip group
+guaranteed returns
+join now
+stock tips
+</textarea>
+
+</div>
+
+<div class="glass rounded-3xl p-6">
+
+<h2 class="text-2xl font-bold mb-4">
+Platforms
+</h2>
+
+<div class="space-y-3">
+
+<label class="flex items-center gap-3">
+<input type="checkbox" checked>
+Instagram
+</label>
+
+<label class="flex items-center gap-3">
+<input type="checkbox" checked>
+Facebook
+</label>
+
+<label class="flex items-center gap-3">
+<input type="checkbox" checked>
+LinkedIn
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+<button
+onclick="startScan()"
+class="bg-gradient-to-r from-cyan-400 to-purple-500 px-10 py-5 rounded-2xl text-2xl font-bold"
+>
+Start Monitoring
+</button>
+
+<div class="glass rounded-3xl p-6 mt-10">
+
+<h2 class="text-3xl font-black mb-6">
+Detection Results
+</h2>
+
+<table class="w-full">
+
+<thead>
+
+<tr class="border-b border-slate-700 text-left">
+<th class="p-4">Platform</th>
+<th class="p-4">Username</th>
+<th class="p-4">Post URL</th>
+<th class="p-4">Risk</th>
+<th class="p-4">Match</th>
+</tr>
+
+</thead>
+
+<tbody id="results"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+function startScan(){
+
+const tbody =
+document.getElementById('results')
+
+tbody.innerHTML += `
+<tr class="border-b border-slate-800">
+
+<td class="p-4">Instagram</td>
+
+<td class="p-4">
+trading_master
+</td>
+
+<td class="p-4">
+<a
+href="#"
+class="text-cyan-400"
+>
+Open Post
+</a>
+</td>
+
+<td class="p-4">
+<span class="bg-red-500/20 text-red-300 px-3 py-1 rounded-full">
+Critical
+</span>
+</td>
+
+<td class="p-4">
+92%
+</td>
+
+</tr>
+`
+
+}
+
+</script>
+
+</body>
+</html>
