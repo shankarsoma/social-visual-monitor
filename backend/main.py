@@ -2,7 +2,6 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from detection import detect_logo_similarity
 from ocr import extract_text_from_image
-from screenshots import save_screenshot
 
 app = FastAPI()
 

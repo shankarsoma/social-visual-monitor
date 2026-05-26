@@ -7,23 +7,60 @@ AI-powered ORM monitoring dashboard for:
 
 ## Features
 
-- Logo similarity detection
 - OCR text extraction
-- Fraud keyword detection
+- Logo similarity detection
 - Risk scoring
+- Screenshot evidence
 - CSV/XLSX export
-- Evidence management
+- Enterprise dashboard UI
 
-## Setup
+---
 
-### Backend
+## Setup Guide
 
-```bash
+### 1. Clone Repository
+
+git clone YOUR_GITHUB_REPO
+
+---
+
+### 2. Create Virtual Environment
+
+Mac/Linux:
+python3 -m venv venv
+source venv/bin/activate
+
+Windows:
+python -m venv venv
+venv\Scripts\activate
+
+---
+
+### 3. Install Requirements
+
 pip install -r requirements.txt
-uvicorn main:app --reload
-```
 
-### Frontend
+---
+
+### 4. Install Tesseract OCR
+
+Mac:
+brew install tesseract
+
+Windows:
+https://github.com/tesseract-ocr/tesseract/releases
+
+---
+
+### 5. Start Backend
+
+cd backend
+uvicorn main:app --reload
+
+---
+
+### 6. Open Frontend
 
 Open:
 frontend/index.html
+
