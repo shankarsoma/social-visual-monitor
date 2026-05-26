@@ -1,7 +1,5 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from detection import detect_logo_similarity
-from ocr import extract_text_from_image
 
 app = FastAPI()
 
@@ -15,26 +13,42 @@ app.add_middleware(
 
 @app.get("/")
 def home():
-    return {"status": "Social Visual Monitor Running"}
-
-@app.post("/extract-ocr")
-async def extract_ocr(file: UploadFile = File(...)):
-
-    contents = await file.read()
-
-    result = extract_text_from_image(contents)
-
     return {
-        "ocr_text": result
+        "status": "AiPlex ORM API Running"
     }
 
-@app.post("/detect-logo")
-async def detect_logo(file: UploadFile = File(...)):
+@app.get("/scan")
+def scan():
 
-    contents = await file.read()
-
-    similarity = detect_logo_similarity(contents)
-
-    return {
-        "similarity_score": similarity
-    }
+    return [
+        {
+            "platform":"Instagram",
+            "username":"trading_master",
+            "url":"https://www.instagram.com/p/DXXA7x3GfUw/",
+            "brand":"Zerodha",
+            "score":"94%",
+            "risk":"Critical",
+            "ocr":"Join VIP Telegram Group",
+            "time":"2 hours ago"
+        },
+        {
+            "platform":"Facebook",
+            "username":"stocksignalsindia",
+            "url":"https://www.facebook.com/countrysabsepahle/posts/pfbid02Nfacp5XtSrxiDTZ9PuUHCmyvPAMUjnL2S8dWPDqoeBwBmWaYFLT32QPFeLU2RdF7l",
+            "brand":"Groww",
+            "score":"89%",
+            "risk":"High",
+            "ocr":"Guaranteed Returns",
+            "time":"1 day ago"
+        },
+        {
+            "platform":"LinkedIn",
+            "username":"Market Insights",
+            "url":"https://www.linkedin.com/feed/update/urn:li:activity:7464967476284653568/",
+            "brand":"ICICI Direct",
+            "score":"91%",
+            "risk":"Medium",
+            "ocr":"Premium Signals Group",
+            "time":"3 days ago"
+        }
+    ]
